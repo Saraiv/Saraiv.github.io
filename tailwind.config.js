@@ -7,7 +7,8 @@ module.exports = {
         'top-bar-black': '#1F1F1F',
         'background-black': '#4B4B4B',
         'close-button-red': '#EC4545',
-        'terminal-tab': '#3D3D3D'
+        'terminal-tab': '#3D3D3D',
+        'background-console': '#3E3D3D'
       }
     },
   },

@@ -5,9 +5,12 @@ import Window from './components/Window/Window'
 const App = () => {
     return (
             <div className='w-screen h-screen p-10'>
-                <TopBar />
-                <Window />
+                <div className='w-full h-full pb-10'>
+                    <TopBar />
+                    <Window />
+                </div>
             </div>
+            
     )
 }
 
