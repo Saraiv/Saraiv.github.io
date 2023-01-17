@@ -4,8 +4,13 @@ import Window from './components/Window/Window'
 
 const App = () => {
     const [lightMode, setLightMode] = useState(false)
+
+    const onClickBodyHandler = () => {
+        document.querySelector('#input').focus()
+    }
+
     return (
-        <div className={ lightMode ? 'ease-out duration-1000 light bg-gray-300' : 'ease-out duration-1000 bg-background-black'}>
+        <div onClick={onClickBodyHandler} className={ lightMode ? 'ease-out duration-1000 light bg-gray-300' : 'ease-out duration-1000 bg-background-black'}>
             <div className='w-screen h-screen sm:p-10'>
                 <div className='w-full h-full pb-10'>
                     <TopBar />

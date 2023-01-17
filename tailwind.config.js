@@ -3,6 +3,11 @@ module.exports = {
   darkMode: 'class',
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
+    fontSize:{
+      esm: ['0.650rem', {
+        lineHeight: '1rem'
+      }]   
+    },
     extend: {
       colors: {
         'top-bar-black': '#1F1F1F',

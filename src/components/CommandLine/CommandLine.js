@@ -3,9 +3,16 @@ import {
     OldBank, 
     WePlaySports, 
     AllDayClinic, 
-    AboutMe, 
+    AboutMe,
     HackMe,
-    Help
+    Help,
+    LightMode,
+    DarkMode,
+    Experience,
+    Amarinfo,
+    Empis,
+    Verdecenter,
+    Waveform
 } from '../Constants/TextConstants'
 import {
     getTime
@@ -14,10 +21,13 @@ import {
 const Window = (props) => {
     const [windSize, setWindowSize] = useState(1920)
     const [maxLength, setMaxLength] = useState(0)
-    let projectsArray = []
+    let projectsArray = [], experienceArray = []
     projectsArray.push(OldBank, WePlaySports, AllDayClinic)
+    experienceArray.push(Experience, Amarinfo, Empis, Verdecenter, Waveform)
 
     const [command, setCommand] = useState([])
+
+    //TODO REMEMBER LAST COMMANDS HISTORY OF COMMANDS
 
     const onSubmitHandler = (e) => {
         e.preventDefault()
@@ -26,10 +36,14 @@ const Window = (props) => {
         switch(e.target.input.value.toLowerCase()){
             case 'light-mode':
                 props.setLightMode(true)
+                setCommand([...command, hours + ':' + minutes + ':' + seconds + '- '
+                                        + LightMode])
                 document.getElementById('input').value = ''
                 break
             case 'dark-mode':
                 props.setLightMode(false)
+                setCommand([...command, hours + ':' + minutes + ':' + seconds + '- '
+                                        + DarkMode])
                 document.getElementById('input').value = ''
                 break
             case 'clear':
@@ -52,6 +66,16 @@ const Window = (props) => {
                                         + AboutMe])
                 document.getElementById('input').value = ''
                 break
+            case 'experience':
+                //TODO WITH ENTERS SEPARATING SENTENCES
+                setCommand([...command, hours + ':' + minutes + ':' + seconds + '- '
+                                        + experienceArray])
+                document.getElementById('input').value = ''
+                break
+            case 'hobbies':
+                //TODO
+                document.getElementById('input').value = ''
+                break
             default:
                 setCommand([...command, hours + ':' + minutes + ':' + seconds + '- ' 
                                         + HackMe])
@@ -60,7 +84,6 @@ const Window = (props) => {
         }
     }
     
-    //TODO
     const handleOnChangeInput = () => {
         setWindowSize(window.innerWidth)       
     }
@@ -94,7 +117,7 @@ const Window = (props) => {
                 <form className='w-auto grow' onSubmit={onSubmitHandler}>
                     <input 
                         onChange={handleOnChangeInput} 
-                        autoComplete='off' 
+                        autoComplete='off'
                         maxLength={maxLength} 
                         autoFocus 
                         id='input' 

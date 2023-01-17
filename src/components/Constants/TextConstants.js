@@ -1,5 +1,3 @@
-import { myAge } from '../Helpers/Helpers'
-
 //COMMANDLINE
 
 export const OldBank =  'OLD BANK\n' +
@@ -23,14 +21,37 @@ export const AllDayClinic = 'ALL DAY CLINIC\n' +
                             'Esta aplicação foi proposta na necessidade dos médicos e pacientes ' +
                             'terem uma só cosulta por mês e gestão da mesma.\n'
 
-export const AboutMe =  'I am João Saraiva ' + myAge() + ' years old rising software developer that is still' +
+export const AboutMe =  'I am João Saraiva ' +
+                        'rising software developer that is still ' +
                         'a junior dev allways trying and looking to learn. I am ' +
                         'from Braga/Portugal and at the moment i am at the second-year bachelor ' +
                         'degree student in digital game development.\n'
 
-export const HackMe = 'Dont try to cheat the system please :)'
+export const Experience = 'Throughout my school progress I had several opportunities to learn ' +
+                          'and gain a lot of knowledge with the internships I had.'
 
-export const Help = 'help, projects, about-me, clear, light-mode, dark-mode'
+export const Amarinfo = 'Amarinfo\n' +
+                        'Computer and hardware repair.'
+
+export const Empis = 'Empis\n' +
+                     'Hardware repair. Professional qualifications related to web apps frontend. ' +
+                     'Professional qualifications related to primavera software.\n'
+
+export const Verdecenter =  'Verdecenter\n' +
+                            'Computer and hardware repair.\n'
+
+export const Waveform = 'Waveform\n' +
+                        'During the entire internship, an Android and iOS mobile application was made ' +
+                        'for the management and maintenance of gates, both through the application and through ' +
+                        'voice.\n'
+
+export const HackMe = 'Dont try to cheat the system please :)\n'
+
+export const Help = 'help, projects, about-me, experience, hobbies, clear, light-mode, dark-mode\n'
+
+export const LightMode = 'Light mode applied!\n'
+
+export const DarkMode = 'Dark mode applied!\n'
 
 //WINDOW
 
