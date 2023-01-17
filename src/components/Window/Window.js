@@ -1,63 +1,47 @@
-import { React, useEffect, useState } from 'react'
+import { React } from 'react'
+import CommandLine from '../CommandLine/CommandLine'
+import CV from '../../files/JoãoSaraivaCV.pdf'
+import { 
+    TerminalTitle,
+    CopyRight,
+    GithubPrompt,
+    GithubLink,
+    ContactMe,
+    CVPrompt,
+    HelpPrompt
+} from '../Constants/TextConstants'
 
-const Window = () => {
-    const [windSize, setWindowSize] = useState(1920)
-    const [maxLength, setMaxLength] = useState(0)
-
+const Window = (props) => {
     const handleClickLinkGithub = () => {
         window.open('https://github.com/Saraiv/', '_blank')
     }
 
-    const onSubmitHandler = (e) => {
-        e.preventDefault()
-        //TODO
-        switch(e.target.input.value){
-            case 'help':
-                break
-            default:
-                window.alert('Dont try to cheat the system please :)')
-        }
-    }
-    
-    //TODO
-    const handleOnChangeInput = () => {
-        setWindowSize(window.innerWidth)
-    }
-
-    useEffect (() => {
-        if(windSize <= 1920 && windSize >= 1024) setMaxLength(80)
-        else if(windSize < 1024 && windSize >= 640) setMaxLength(60)
-        else if(windSize < 640) setMaxLength(50)
-    }, [windSize])
-
     return (
-        <div className='shadow-lg shadow-black/20 w-full h-full bg-background-console sm:rounded-b-lg text-white p-4 text-sm'>
+        <div className={ props.lightMode ? 'ease-out duration-1000 shadow-lg shadow-black/20 w-full h-full bg-slate-100 sm:rounded-b-lg text-background-console p-4 text-sm overflow-hidden' : 'ease-out duration-1000 shadow-lg shadow-black/20 w-full h-full bg-background-console sm:rounded-b-lg text-white p-4 text-sm overflow-hidden' } >
             <div className='grid grid-cols-1'>
                 <strong>
-                    Saraiva's Terminal
+                    {TerminalTitle}
                 </strong>
                 <span>
-                    Copyright João Saraiva. All rights reserved.
+                    {CopyRight}
                 </span>
             </div>
             <div className='grid grid-cols-1 mt-10'>
                 <span>
-                    Visit my GitHub to keep up with my projects and future ones: <span onClick={handleClickLinkGithub} className='hover:underline hover:underline-offset-1 cursor-pointer'>https://github.com/Saraiv/</span>
+                    {GithubPrompt} <span onClick={handleClickLinkGithub} className='hover:underline hover:underline-offset-1 cursor-pointer'>{GithubLink}</span>
                 </span>
                 <span>
-                    Contact me by email! mainsaraiva@gmail.com
+                    {ContactMe}
                 </span>
                 <span>
-                    Try typing ‘help’.
+                    {CVPrompt} <a className='hover:underline hover:underline-offset-1 cursor-pointer' href={CV} download={CV}>here</a>
+                </span>
+                <span>
+                    {HelpPrompt}
                 </span>
             </div>
             <div className='grid grid-cols-1 mt-10'>
-                <span className='w-72'>
-                    $PATH/saraivas-portfolio>
-                </span>
-                <form className='w-full' onSubmit={onSubmitHandler}>
-                    <input onChange={handleOnChangeInput} autoComplete='off' maxLength={maxLength} autoFocus id='input' placeholder='_' className='relative w-full outline-0 bg-transparent border-none shadow-none resize-none overflow-hidden' />
-                </form>
+                <CommandLine setLightMode={props.setLightMode} lightMode={props.lightMode} />
             </div>
         </div>
     )

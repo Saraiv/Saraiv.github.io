@@ -1,4 +1,8 @@
 import React from 'react'
+import {
+    MyPortfolio,
+    TerminalTitle
+} from '../Constants/TextConstants'
 
 const TopBar = () => {
     const onClickExitHandler = (e) => {
@@ -22,7 +26,7 @@ const TopBar = () => {
                 <div className='relative m-1 bg-terminal-tab rounded-tl-lg w-full'>
             
                     <span className='block py-1 text-center'>
-                        Saraiva's Terminal
+                        {TerminalTitle}
                     </span>
                 </div>
                 
@@ -31,7 +35,7 @@ const TopBar = () => {
             <div className='flex w-0 md:w-1/3 justify-center'>
 
                 <span className='p-2 text-center relative hidden lg:block sm:hidden'>
-                    Saraiva's Portfolio
+                    {MyPortfolio}
                 </span>
 
             </div>
