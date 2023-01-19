@@ -28,47 +28,62 @@ export const AboutMe =  'I am João Saraiva ' +
                         'degree student in digital game development.\n'
 
 export const Experience = 'Throughout my school progress I had several opportunities to learn ' +
-                          'and gain a lot of knowledge with the internships I had.'
+                          'and gain a lot of knowledge with the internships I had.\n'
 
-export const Amarinfo = 'Amarinfo\n' +
+export const Amarinfo = 'AMARINFO\n' +
                         'Computer and hardware repair.'
 
-export const Empis = 'Empis\n' +
+export const Empis = 'EMPIS\n' +
                      'Hardware repair. Professional qualifications related to web apps frontend. ' +
                      'Professional qualifications related to primavera software.\n'
 
-export const Verdecenter =  'Verdecenter\n' +
+export const Verdecenter =  '\nVERDECENTER\n' +
                             'Computer and hardware repair.\n'
 
-export const Waveform = 'Waveform\n' +
+export const Waveform = 'WAVEFORM\n' +
                         'During the entire internship, an Android and iOS mobile application was made ' +
                         'for the management and maintenance of gates, both through the application and through ' +
                         'voice.\n'
 
 export const HackMe = 'Dont try to cheat the system please :)\n'
 
-export const Help = 'help, projects, about-me, experience, hobbies, clear, light-mode, dark-mode\n'
+export const Help = 'HELP - Basic menu of some helping commands that could help you.\n' +
+                    'PROJECTS - Compilation of all of my important projects throughout my whole academic life.\n' +
+                    'ABOUT-ME - Some information about myself.\n' +
+                    'EXPERIENCE - Working experiences that i had throughout my life.\n' +
+                    'HOBBIES - Some of the hobbies that i have aswell as some funny facts.\n' +
+                    'CLEAR - Clears the console.\n' +
+                    'LIGHT-MODE - Enables Light mode.\n' +
+                    'DARK-MODE - Enables Dark mode.\n'
 
 export const LightMode = 'Light mode applied!\n'
 
 export const DarkMode = 'Dark mode applied!\n'
 
+export const Hobbies =  'I really like to waste my spare time learning and improving ' +
+                        'my programming skills with smaller projects.\n' +
+                        'I like to watch series from wich my favourite are ' +
+                        'Vinkings,, PeakyBlinders, House of The Dragon, The Walking Dead, ' +
+                        'Stranger Things, Euphoria and The Haunting of The Hill House.\n' +
+                        'One of my favourite hobbies to do is playing Volleyball in wich i play at middle.\n' +
+                        'I grew up watching practically all the harry potter movies and i love it.\n'
+
 //WINDOW
 
-export const TerminalTitle = "Saraiva's Terminal"
+export const TerminalTitle = "Saraiva's Terminal\n"
 
-export const CopyRight = 'Copyright João Saraiva. All rights reserved.'
+export const CopyRight = 'Copyright João Saraiva. All rights reserved.\n'
 
-export const GithubPrompt = 'Visit my GitHub to keep up with my projects and future ones: '
+export const GithubPrompt = 'Visit my GitHub to keep up with my projects and future ones: \n'
 
-export const GithubLink = 'https://github.com/Saraiv/'
+export const GithubLink = 'https://github.com/Saraiv/ \n'
 
-export const ContactMe = 'Contact me by email! mainsaraiva@gmail.com'
+export const ContactMe = 'Contact me by email! mainsaraiva@gmail.com\n'
 
-export const CVPrompt = 'Also take a look at my CV:'
+export const CVPrompt = 'Also take a look at my CV:\n'
 
-export const HelpPrompt = 'Try typing ‘help’.'
+export const HelpPrompt = 'Try typing ‘help’.\n'
 
 //TOPBAR
 
-export const MyPortfolio = "Saraiva's Portfolio"
+export const MyPortfolio = "Saraiva's Portfolio\n"

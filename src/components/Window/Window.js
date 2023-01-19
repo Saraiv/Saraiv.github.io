@@ -22,12 +22,12 @@ const Window = (props) => {
     }, 200)
 
     return (
-        <div className={ props.lightMode ? 'ease-out duration-1000 shadow-lg shadow-black/20 w-full h-full bg-slate-100 sm:rounded-b-lg text-background-console p-4 text-sm overflow-y-auto' : 'ease-out duration-1000 shadow-lg shadow-black/20 w-full h-full bg-background-console sm:rounded-b-lg text-white p-4 text-sm overflow-y-auto' } >
-            <div className='grid grid-cols-2'>
+        <div className={ props.lightMode ? 'ease-out duration-1000 shadow-lg shadow-black/20 w-full h-full bg-slate-100 text-background-console p-4 overflow-y-auto sm:rounded-b-lg text-base sm:text-sm' : 'ease-out duration-1000 shadow-lg shadow-black/20 w-full h-full bg-background-console text-white p-4 overflow-y-auto sm:rounded-b-lg text-sm sm:text-base' } >
+            <div className='grid grid-cols-1 sm:grid-cols-2'>
                 <strong>
                     {TerminalTitle}
                 </strong>
-                <div className='text-right text-esm'>
+                <div className='sm:text-right text-sm sm:text-esm'>
                     <span>João Saraiva </span>
                     <span id='myAge'></span>
                     <span> Years Old</span>

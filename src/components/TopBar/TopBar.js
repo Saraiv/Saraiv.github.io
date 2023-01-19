@@ -50,7 +50,7 @@ const TopBar = () => {
                     □
                 </span>
 
-                <span className='p-2 px-4 relative rounded-tr-lg cursor-pointer hover:bg-close-button-red' onClick={onClickExitHandler}>
+                <span className='p-2 px-4 relative sm:rounded-tr-lg cursor-pointer hover:bg-close-button-red' onClick={onClickExitHandler}>
                     x
                 </span>
 

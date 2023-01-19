@@ -12,7 +12,8 @@ import {
     Amarinfo,
     Empis,
     Verdecenter,
-    Waveform
+    Waveform,
+    Hobbies
 } from '../Constants/TextConstants'
 import {
     getTime
@@ -26,24 +27,41 @@ const Window = (props) => {
     experienceArray.push(Experience, Amarinfo, Empis, Verdecenter, Waveform)
 
     const [command, setCommand] = useState([])
+    const [history, addHistory] = useState([])
+    const [countHistory, setCountHistory] = useState(0)
 
     //TODO REMEMBER LAST COMMANDS HISTORY OF COMMANDS
 
     const onSubmitHandler = (e) => {
         e.preventDefault()
+        addHistory([...history, e.target.input.value])
         const [hours, minutes, seconds] = getTime()
         
         switch(e.target.input.value.toLowerCase()){
             case 'light-mode':
-                props.setLightMode(true)
-                setCommand([...command, hours + ':' + minutes + ':' + seconds + '- '
+                if(!props.lightMode){
+                    props.setLightMode(true)
+                    setCommand([...command, hours + ':' + minutes + ':' + seconds + '- '
                                         + LightMode])
+                }
+                else{
+                    props.setLightMode(false)
+                    setCommand([...command, hours + ':' + minutes + ':' + seconds + '- '
+                                        + DarkMode])
+                }
                 document.getElementById('input').value = ''
                 break
             case 'dark-mode':
-                props.setLightMode(false)
-                setCommand([...command, hours + ':' + minutes + ':' + seconds + '- '
+                if(props.lightMode){
+                    props.setLightMode(false)
+                    setCommand([...command, hours + ':' + minutes + ':' + seconds + '- '
                                         + DarkMode])
+                }
+                else{
+                    props.setLightMode(true)
+                    setCommand([...command, hours + ':' + minutes + ':' + seconds + '- '
+                                        + LightMode])
+                }
                 document.getElementById('input').value = ''
                 break
             case 'clear':
@@ -56,7 +74,6 @@ const Window = (props) => {
                 document.getElementById('input').value = ''
                 break
             case 'projects':
-                //TODO WITH ENTERS SEPARATING SENTENCES
                 setCommand([...command, hours + ':' + minutes + ':' + seconds + '- '
                                         + projectsArray])
                 document.getElementById('input').value = ''
@@ -67,13 +84,13 @@ const Window = (props) => {
                 document.getElementById('input').value = ''
                 break
             case 'experience':
-                //TODO WITH ENTERS SEPARATING SENTENCES
                 setCommand([...command, hours + ':' + minutes + ':' + seconds + '- '
                                         + experienceArray])
                 document.getElementById('input').value = ''
                 break
             case 'hobbies':
-                //TODO
+                setCommand([...command, hours + ':' + minutes + ':' + seconds + '- ' 
+                                        + Hobbies])
                 document.getElementById('input').value = ''
                 break
             default:
@@ -81,6 +98,20 @@ const Window = (props) => {
                                         + HackMe])
                 document.getElementById('input').value = ''
                 break
+        }
+    }
+
+    const handleOnKeyDownInput = (e) => {
+        if (e.keyCode === 38 && history.length >= 0){
+            if(countHistory < history.length && countHistory >= 0){
+                setCountHistory(countHistory + 1)
+                e.target.value = history[countHistory]
+            }
+        } else if (e.keyCode === 40 && history.length >= 0){
+            if(countHistory >= 0){
+                setCountHistory(countHistory - 1)
+                e.target.value = history[countHistory]
+            }
         }
     }
     
@@ -100,17 +131,20 @@ const Window = (props) => {
                 {
                     command.map(item => {
                         return (
-                            <li key={item} className='block'>
+                            <li className={item ? 'block last:pb-10' : 'block'}  key={item}>
                                 <div>
-                                    {item}
+                                    {
+                                        item.split('\n').map(element => {
+                                            return <div key={element}>{element.replace(',','')}</div>
+                                        })
+                                    }
                                 </div>
-                                <br />
                             </li>
                         )
                     })
                 }
             </div>
-            <div className='flex w-full'>
+            <div className='grid grid-cols-1 sm:flex sm:w-full'>
                 <span className='w-auto'>
                     $PATH/saraivas-portfolio-
                 </span>
@@ -121,6 +155,7 @@ const Window = (props) => {
                         maxLength={maxLength} 
                         autoFocus 
                         id='input' 
+                        onKeyDown={handleOnKeyDownInput}
                         placeholder='_' 
                         className='relative w-full outline-0 bg-transparent border-none shadow-none resize-none overflow-hidden' />
                 </form>
