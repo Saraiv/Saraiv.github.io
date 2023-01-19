@@ -4,6 +4,7 @@ My portfolio created from scratch by me
 
 # Friendly reminder to me myself and i for firebase deployment
 ```npm run build```
+```Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass```
 ```firebase deploy --only hosting```
 
 # Presentation
